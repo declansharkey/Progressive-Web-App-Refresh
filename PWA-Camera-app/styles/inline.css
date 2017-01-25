@@ -553,7 +553,7 @@ button#clear {
 #confirmation .demo-content {
     width: 70%;
     position: relative;
-    margin: 0 auto;
+    margin: 0;
 }
 
 #gps-panel .demo-content,
