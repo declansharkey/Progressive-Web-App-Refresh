@@ -17,5 +17,12 @@
                 $(".your-store a").replaceWith(selectedStore);
             });
 
+            $("#image-upload-panel .upload a").click(function() {
+                var myImageList = $("#result").clone();
+                $("#options-container output").replaceWith(myImageList);
+                var optionsContent = $("<div class='options-content'><input type=tel></div>");
+                $("#options-panel .image-container").append(optionsContent);
+                console.log("Here is Options Content:" + optionsContent);
+            });
 
         });

@@ -468,7 +468,8 @@ button#clear {
     margin-top: 20px;
 }
 
-#image-upload-panel {
+#image-upload-panel,
+#options-panel {
     height: auto;
     min-height: 100%;
 }
@@ -546,7 +547,61 @@ button#clear {
 }
 
 
+/*OPTIONS PANEL*/
+
+#options-panel .upload #result {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+#options-panel .upload .image-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transform: inherit;
+    width: 100%;
+}
+
+#options-panel .upload .image-container .thumbnail {
+    width: 30%;
+    height: auto;
+    transform: inherit;
+    top: inherit;
+}
+
+#options-panel .upload .image-container i {
+    display: none;
+}
+
+#options-panel .options-content {
+    width: 70%;
+    padding: 10px;
+}
+
+
 /*FOR DEMO*/
+
+div#camera-panel {
+    height: 100%;
+}
+
+div#camera-panel a {
+    display: block;
+    height: 100%;
+}
+
+div#camera-panel .demo-content {
+    background-image: url(../images/1.jpg);
+    background-repeat: no-repeat;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
 
 #camera-panel-reveal div,
 #gps-panel .demo-content,
