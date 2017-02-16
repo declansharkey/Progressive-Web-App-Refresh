@@ -434,7 +434,6 @@ h4 {
     max-height: 100%;
     max-width: 100%;
     display: block;
-    margin: 0 auto;
 }
 
 .upload #clear {
@@ -472,6 +471,10 @@ button#clear {
 #options-panel {
     height: auto;
     min-height: 100%;
+}
+
+#image-upload-panel .upload .image-container .thumbnail {
+    margin: 0 auto;
 }
 
 
@@ -560,11 +563,11 @@ button#clear {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
     -webkit-transform: inherit;
     width: 100%;
+    justify-content: space-between;
 }
 
 #options-panel .upload .image-container .thumbnail {
@@ -741,7 +744,7 @@ body main .mdl-color--grey-100 {
     .upload #result {
         -webkit-box-pack: center;
         -ms-flex-pack: center;
-        justify-content: center;
+        justify-content: flex-start;
     }
 }
 
@@ -855,6 +858,25 @@ body main .mdl-color--grey-100 {
     cursor: pointer;
 }
 
+input[type="tel"] {
+    width: 30px;
+}
+
+#options-container .image-container {
+    margin: 0;
+}
+
+#options-container label,
+#options-container input {
+    display: block;
+    text-align: center;
+}
+
+.all-uploads-container {
+    display: flex;
+    justify-content: space-around;
+}
+
 
 /* 100% Image Width on Smaller Screens */
 
@@ -868,6 +890,6 @@ body main .mdl-color--grey-100 {
     #camera-panel-reveal div,
     #gps-panel .demo-content,
     #confirmation .demo-content {
-        width: calc(100% - 16px);
+        width: 100%;
     }
 }

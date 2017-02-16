@@ -1,28 +1,30 @@
-        $(document).ready(function() {
-            geoFindMe();
+$(document).ready(function() {
+    geoFindMe();
 
-            $(".cont-cart, .store-choice a").click(function() {
-                var imageQty = $('#result .image-container').length;
-                $("#cart-details div").replaceWith("<div id='cart-details-qty'>You have ordered " + imageQty + " images</div>");
-                console.log("Quantity has been registered");
-            });
+    $(".cont-cart").click(function() {
+        var imageQty = $('#image-upload-panel #result .image-container').length;
+        $("#cart-details div").replaceWith("<div id='cart-details-qty'>You have ordered " + imageQty + " images</div>");
+        var selectedStore = $(".store-choice .selected").clone();
+        $(".your-store a").replaceWith(selectedStore);
+    });
 
-            $(".store-choice a").on('click', function() {
-                $(".store-choice a").removeClass("selected");
-                $(this).addClass("selected");
-            })
+    $(".store-choice a").on('click', function() {
+        $(".store-choice a").removeClass("selected");
+        $(this).addClass("selected");
+    })
 
-            $(".cont-cart").click(function() {
-                var selectedStore = $(".store-choice .selected").clone();
-                $(".your-store a").replaceWith(selectedStore);
-            });
+    $("#image-upload-panel .upload a").click(function() {
+        var myImageList = $("#result").clone();
+        $("#options-container output").replaceWith(myImageList);
+        var optionsContent = $("<label>4x7<input class=fourseven type=tel></label><label>5x5<input class=fivefive type=tel></label><label>5x7<input class=fiveseven type=tel></label>");
+        $("#options-panel .image-container").append(optionsContent);
+        console.log("Here is Options Content:" + optionsContent);
+    });
 
-            $("#image-upload-panel .upload a").click(function() {
-                var myImageList = $("#result").clone();
-                $("#options-container output").replaceWith(myImageList);
-                var optionsContent = $("<div class='options-content'><input type=tel></div>");
-                $("#options-panel .image-container").append(optionsContent);
-                console.log("Here is Options Content:" + optionsContent);
-            });
+    $("#fourxseven, #fivexfive, #fivexseven").keyup(function(e) {
+        $(".fourseven").val($("#fourxseven").val());
+        $(".fivefive").val($("#fivexfive").val());
+        $(".fiveseven").val($("#fivexseven").val());
+    });
 
-        });
+});
